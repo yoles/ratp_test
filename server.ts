@@ -17,7 +17,7 @@ app.get("/subway/:line/toilets", (req, res) => {
 	if (hashError) {
 		return res.status(404).send(`${line} is not found or not formatted`);
 	}
-	const toilets = new GetToilet(new APIToiletsAdapter());
+	const toilets = new GetToilet(new APIToiletsAdapter(toiletService));
 	console.log("Toilets: ", toilets);
 	toilets.byLine(line).then(result => {
 		res.send(result);
