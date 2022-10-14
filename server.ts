@@ -12,8 +12,13 @@ const port = process.env.PORT;
 
 app.get("/subway/:line/toilets", (req, res) => {
 	const { line } = req.params;
-	// const toiletService = new ToiletAPIService();
+	const toiletService = new ToiletAPIService();
+	const hashError = toiletService.validateSuwayLine(line);
+	if (hashError) {
+		return res.status(404).send(`${line} is not found or not formatted`);
+	}
 	const toilets = new GetToilet(new APIToiletsAdapter());
+	console.log("Toilets: ", toilets);
 	toilets.byLine(line).then(result => {
 		res.send(result);
 	}).catch(e => {

@@ -8,4 +8,24 @@ export class ToiletAPIService {
 		const geolocation = new Geolocation(coord_geo[0], coord_geo[1]);
 		return new Toilet(station, accessible_au_public, tarif_gratuit_payant, geolocation);
 	}
+
+
+	isSubwayLineBetWeen1to14(line: string) {
+		const regex = new RegExp(/^([1-9]|1[01234])$/);
+		return regex.test(line);
+	}
+
+	
+	isSubwayLineWellFormatted(line: string) {
+		const regex = new RegExp(/^[1-9]_b$/);
+		return regex.test(line);
+	}
+	
+	validateSuwayLine(line: string) {
+		return (
+			!this.isSubwayLineBetWeen1to14(line) ??
+			!this.isSubwayLineWellFormatted(line)
+		);
+	}
+
 }
