@@ -1,0 +1,11 @@
+-D typescript
+-D nodemon
+-D ts-node 
+-D eslint
+-D prettier
+-D @types/express 
+-D @types/swagger-ui-express
+-D @types/swagger-jsdoc
+-D @typescript-eslint/eslint-plugin@latest
+-D @typescript-eslint/parser@latest
+-D @types/jest

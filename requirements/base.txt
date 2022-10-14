@@ -1,0 +1,7 @@
+express
+dotenv
+jest
+ts-jest
+axios
+swagger-ui-express
+swagger-jsdoc
