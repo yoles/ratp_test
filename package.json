@@ -6,7 +6,8 @@
   "author": "LESUEUR Yohann",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.ts",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^1.1.2",
